@@ -1,0 +1,89 @@
+<!-- Title group  -->
+<div class="title-group">
+  <h1 class="mat-h1">Editar Empleado</h1>
+  <mat-divider fxFlex="1 0"></mat-divider>
+</div>
+<!-- Form -->
+<div class="inner-wrapper">
+  <form
+    [formGroup]="employeeForm"
+    (ngSubmit)="updateStudentForm()"
+    #resetStudentForm="ngForm"
+    novalidate
+  >
+     <!-- Left block -->
+     <mat-card>
+      <div class="controlers-wrapper">
+        <!-- Name -->
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Nombre completo" formControlName="fullName" />
+          <mat-error *ngIf="handleError('fullName', 'required')">
+            El <strong>Nombre completo</strong> es requerido
+          </mat-error>
+        </mat-form-field>
+        <!-- nationalIdentity -->
+        <mat-form-field class="example-full-width">
+          <input matInput type="number" placeholder="Cédula de Identidad" formControlName="nationalIdentity" />
+          <mat-error *ngIf="handleError('nationalIdentity', 'required')">
+            La <strong>Cédula de Identidad</strong> es requerida
+          </mat-error>
+        </mat-form-field>
+        <!-- Date of birth -->
+        <mat-form-field>
+          <input
+            matInput
+            readonly
+            [matDatepicker]="picker"
+            placeholder="Fecha de nacimiento"
+            formControlName="birthDate"
+            (dateChange)="formatDate($event)"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="handleError('birthDate', 'required')">
+            <strong>Fecha de nacimiento</strong> es requerido
+          </mat-error>
+        </mat-form-field>
+        <!-- nationalIdentity -->
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Email" formControlName="email" />
+          <mat-error *ngIf="handleError('email', 'required')">
+            El <strong>Email</strong> es requerido
+          </mat-error>
+          <mat-error *ngIf="handleError('email', 'email') && !handleError('email', 'required')">
+            Ingrese un Email valido
+          </mat-error>
+        </mat-form-field>
+        <!-- Phone -->
+        <mat-form-field class="example-full-width">
+          <input matInput type="number" placeholder="Teléfono" formControlName="phone" />
+          <mat-error *ngIf="handleError('phone', 'required')">
+            El <strong>Teléfono</strong> es requerido
+          </mat-error>
+        </mat-form-field>
+        <!-- Section -->
+        <mat-form-field>
+          <mat-label>Organización</mat-label>
+          <mat-select formControlName="organitation">
+            <mat-option [value]="sectioinArray.description" *ngFor="let sectioinArray of SectioinArray">{{ sectioinArray.description }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="handleError('organitation', 'required')">
+            <strong>Organización</strong>  es requerido
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </mat-card>
+    <!-- Submit & Reset -->
+    <mat-card>
+      <div class="full-wrapper button-wrapper">
+        <div class="button-wrapper">
+          <button mat-flat-button color="warn">Actualizar</button>
+        </div>
+      </div>
+    </mat-card>
+  </form>
+</div>
