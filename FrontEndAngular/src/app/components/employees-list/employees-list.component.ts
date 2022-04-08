@@ -20,11 +20,11 @@ export class EmployeesListComponent implements OnInit {
   displayedColumns: string[] = [
     'id',
     'fullName',
-    'nationalIdentity',
-    'birthDate',
+    // 'nationalIdentity',
+    //'birthDate',
     'email',
     'phone',
-    'organitation',
+    //'organitation',
     'action'
   ];
   constructor(

@@ -10,21 +10,21 @@
   <div class="mat-elevation-z8">
     <table mat-table [dataSource]="dataSource">
       <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef>Employee ID</th>
+        <th mat-header-cell *matHeaderCellDef>ID</th>
         <td mat-cell *matCellDef="let element">{{ element.id }}</td>
       </ng-container>
       <ng-container matColumnDef="fullName">
-        <th mat-header-cell *matHeaderCellDef>Nombre completo</th>
+        <th mat-header-cell *matHeaderCellDef>Empleado</th>
         <td mat-cell *matCellDef="let element">{{ element.fullName }}</td>
       </ng-container>
-      <ng-container matColumnDef="nationalIdentity">
+      <!--       <ng-container matColumnDef="nationalIdentity">
         <th mat-header-cell *matHeaderCellDef>Cédula</th>
         <td mat-cell *matCellDef="let element">{{ element.nationalIdentity }}</td>
-      </ng-container>
-      <ng-container matColumnDef="birthDate">
-        <th mat-header-cell *matHeaderCellDef>Fecha de nacimiento</th>
+      </ng-container> -->
+      <!--  <ng-container matColumnDef="birthDate">
+        <th mat-header-cell *matHeaderCellDef>Fecha nacimiento</th>
         <td mat-cell *matCellDef="let element">{{  element.birthDate | date:'dd-MM-yyyy' }}</td>
-      </ng-container>
+      </ng-container> -->
       <ng-container matColumnDef="email">
         <th mat-header-cell *matHeaderCellDef>Email</th>
         <td mat-cell *matCellDef="let element">{{ element.email }}</td>
@@ -40,29 +40,17 @@
       <ng-container matColumnDef="action">
         <th mat-header-cell *matHeaderCellDef>Acción</th>
         <td mat-cell *matCellDef="let element; let i = index">
-          <button
-            mat-raised-button
-            color="primary"
-            class="push-right"
-            [routerLink]="['/edit-employee/', element.id]"
-          >
-          <mat-icon>edit</mat-icon>
-          </button>
-          <button
-            mat-raised-button
-            color="accent"
-            (click)="deleteStudent(i, element)"
-          >
-          <mat-icon>delete</mat-icon>
-          </button>
+          <a color="primary" class="push-right" [routerLink]="['/edit-employee/', element.id]">
+            <mat-icon>edit</mat-icon>
+          </a>
+          <a color="accent" (click)="deleteStudent(i, element)">
+            <mat-icon>delete</mat-icon>
+          </a>
         </td>
       </ng-container>
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
     </table>
-    <mat-paginator
-      [pageSizeOptions]="[5, 10, 20]"
-      showFirstLastButtons
-    ></mat-paginator>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
   </div>
 </div>
