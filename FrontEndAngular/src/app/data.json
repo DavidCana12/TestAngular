@@ -1,0 +1,49 @@
+{
+  "server": [
+    {
+      "fullName": "David Canache",
+      "nationalIdentity": 3423423423,
+      "birthDate": "2022-04-03T04:00:00.000Z",
+      "email": "rrrh@gmail.com",
+      "phone": "04128604241",
+      "organitation": "Amazon",
+      "id": 1
+    },
+    {
+      "fullName": "daniel ddaa",
+      "nationalIdentity": 33243223,
+      "birthDate": "2016-10-12T04:00:00.000Z",
+      "email": "danielcanac@gmail.com",
+      "phone": 4234234,
+      "organitation": "Chevron",
+      "id": 2
+    },
+    {
+      "fullName": "teste 3",
+      "nationalIdentity": 232312,
+      "birthDate": "2016-09-26T04:00:00.000Z",
+      "email": "rrrh@gmail.com",
+      "phone": 123123,
+      "organitation": "Facebook",
+      "id": 3
+    }
+  ],
+  "organitation": [
+    {
+      "description": "Chevron",
+      "id": 1
+    },
+    {
+      "description": "Amazon",
+      "id": 2
+    },
+    {
+      "description": "Google",
+      "id": 3
+    },
+    {
+      "description": "Facebook",
+      "id": 4
+    }
+  ]
+}
