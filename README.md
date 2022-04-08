@@ -13,6 +13,7 @@ $ git clone https://github.com/DavidCana12/TestAngular.git
 
 ```
 $ npm install
+$ ng serve
 ```
 
 ## Start mock server
