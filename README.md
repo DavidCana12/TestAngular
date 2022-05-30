@@ -16,7 +16,7 @@ $ npm install
 $ ng serve
 ```
 
-## Start mock server.
+## Start mock server
 
 ```
 $ json-server --watch ./src/app/data.json
